@@ -8,6 +8,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
+const rename = require('gulp-rename')
 
 // Обработка JS
 const js = () => {
@@ -18,8 +19,13 @@ const js = () => {
               message: error.message
           }))
       }))
+      .pipe(rename({
+        suffix: '.src'
+      }))
+      .pipe(dest(path.js.dest, { sourcemaps: app.isDev }))
+      .pipe(src(path.js.src, { sourcemaps: app.isDev }))
       .pipe(babel())
-    //   .pipe(webpack(app.webpack))
+      .pipe(webpack(app.webpack))
       .pipe(dest(path.js.dest, { sourcemaps: app.isDev }))
 }
 
