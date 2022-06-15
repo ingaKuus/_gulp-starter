@@ -7,12 +7,24 @@ html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= pageTitle
+
+        //- Подключение стилей библиотек
+        link(rel="stylesheet", href="./libs/swiper/swiper-bundle.min.css")
+        link(rel="stylesheet", href="./libs/fancybox/fancybox.min.css")
+
+        //- Подключение пользовательских стилей
         link(rel="stylesheet", href="./css/main.css")
     body 
         block page
 
+
+        
+
     //- Подключение библиотек
-    <script src="./js/libs/jquery-3.6.0.min.js"></script>
+    <script src="./libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./libs/fancybox/fancybox.min.js"></script>
+    <script src="./libs/imask/imask.js"></script>
 
     //- Подключение пользовательских скриптов
     script(src='./js/main.js')
