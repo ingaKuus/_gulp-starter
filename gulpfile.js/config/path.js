@@ -23,7 +23,7 @@ module.exports = {
   },
   
   scss: {
-    src: [pathSrc + '/sass/*.{sass,scss}', `!${pathSrc}/sass/{ui,vars}.{sass,scss}`],
+    src: [pathSrc + '/sass/*.{sass,scss}', `!${pathSrc}/sass/{ui,vars,template}.{sass,scss}`],
     watch: pathSrc + '/sass/**/*.{sass,scss}',
     dest: pathDest + '/css'
   },
