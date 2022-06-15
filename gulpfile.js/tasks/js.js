@@ -19,13 +19,13 @@ const js = () => {
               message: error.message
           }))
       }))
-      .pipe(rename({
-        suffix: '.src'
-      }))
-      .pipe(dest(path.js.dest, { sourcemaps: app.isDev }))
-      .pipe(src(path.js.src, { sourcemaps: app.isDev }))
-      .pipe(babel())
-      .pipe(webpack(app.webpack))
+      // .pipe(rename({
+      //   suffix: '.src'
+      // }))
+      // .pipe(dest(path.js.dest, { sourcemaps: app.isDev }))
+      // .pipe(src(path.js.src, { sourcemaps: app.isDev }))
+      // .pipe(babel())
+      // .pipe(webpack(app.webpack))
       .pipe(dest(path.js.dest, { sourcemaps: app.isDev }))
 }
 

@@ -23,13 +23,13 @@ module.exports = {
   },
   
   scss: {
-    src: pathSrc + '/sass/*.{sass,scss}',
+    src: [pathSrc + '/sass/*.{sass,scss}', `!${pathSrc}/sass/{ui,vars}.{sass,scss}`],
     watch: pathSrc + '/sass/**/*.{sass,scss}',
     dest: pathDest + '/css'
   },
 
   js: {
-    src: pathSrc + '/js/*.js',
+    src: pathSrc + '/js/{libs/**/,}*.js',
     watch: pathSrc + '/js/**/*.js',
     dest: pathDest + '/js'
   },

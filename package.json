@@ -59,6 +59,7 @@
     "@awea/gulp-pretty-html": "^1.0.1",
     "@fancyapps/ui": "^4.0.27",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-imagemin-fix": "^5.0.4",
     "gulp-pretty-html": "^2.0.10",
     "imask": "^6.4.2",
     "jquery": "^3.6.0",

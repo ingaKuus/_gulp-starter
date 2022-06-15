@@ -6,7 +6,7 @@ const app = require('../config/app.js')
 // Плагины
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const imageMin = require('gulp-imagemin');
+const imageMin = require('gulp-imagemin-fix');
 const newer = require('gulp-newer');
 const webp = require('gulp-webp');
 const gulpif = require('gulp-if');
