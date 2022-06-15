@@ -21,8 +21,8 @@ const pug = () => {
           }))
       }))
       .pipe(pugs(app.pug))
-      .pipe(webpHtml())
-      .pipe(prettyHtml())
+    //   .pipe(webpHtml())
+    //   .pipe(prettyHtml())
       .pipe(dest(path.pug.dest))
 }
 
