@@ -28,7 +28,7 @@ const scss = () => {
       }))
       .pipe(sassGlob())
       .pipe(sass())
-      .pipe(webpCss())
+    //   .pipe(webpCss())
       .pipe(prefixer())
       .pipe(shorthand())
       .pipe(groupMedia())
