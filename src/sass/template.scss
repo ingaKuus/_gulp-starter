@@ -91,6 +91,10 @@ img {
 
   &__title {
     margin-bottom: 40px;
+
+    span {
+      white-space: nowrap;
+    }
   }
 
   @media (max-width: 600px) {
@@ -119,20 +123,6 @@ img {
   }
 }
 
-.item {
-  position: relative;
-  cursor: pointer;
-
-  &__link {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-}
-
 .logo-wrapper {
   display: flex;
   max-width: 170px;
@@ -146,25 +136,37 @@ img {
 
 .icon {
   display: inline-block;
-  line-height: 1;
+  font-size: 30px;
+  line-height: 0;
+  transition: color .2s ease;
+
+  &.left {
+    transform: rotate(180deg);
+  }
+  &.up {
+    transform: rotate(-90deg);
+  }
+  &.down {
+    transform: rotate(90deg);
+  }
 }
 
-.numbers-list, .social-media-list {
+.numbers, .social-media {
   display: flex;
   align-items: center;
   gap: 20px;
   
-  &__link, &__link .icon {
+  &__item, &__item .icon {
     transition: color .3s ease;
   }
 
-  &__link:hover {
+  &__item:hover {
     color: salmon;
   }
 }
 
 .social-media-list {
-  &__link {
+  &__item {
     font-size: 25px;
   }
 }

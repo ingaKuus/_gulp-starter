@@ -15,7 +15,7 @@ mixin navLinks(links, lvl = 0)
   ul.header__nav-links.nav__links(class= !lvl ? 'header__nav-links-body' : (lvl === 1 ? 'submenu first-lvl' : 'submenu'))
     each link in links
       li
-        a.header__nav-link.nav__link(href=`./${link.href}-page.html`)(class= link.sublinks ? 'complex' : '')= link.name
+        a.header__nav-link.nav__link(href=`./${link.href}-page.html` class= link.sublinks ? 'complex' : '')= link.name
         if (link.sublinks)
           +navLinks(link.sublinks, ++lvl)
 
