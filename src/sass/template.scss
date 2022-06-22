@@ -16,38 +16,26 @@ a {
   color: inherit;
 }
 
-.text-block {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  h1,h2,h3,h4,h5,h6, p {
-    margin: 0;
-  }
-
-  a {
-    color: salmon;
-
-    &:hover {
-      color: $black;
-    }
-  }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.form-block {
-  input, select, button, textarea {
-    box-shadow: none;
-    border: none;
-    outline: none;
-    font-size: $font-size;
-    font-family: $font-family;
-  }
-  button {
-    &:hover {
-      cursor: pointer;
-    }
+h1,h2,h3,h4,h5,h6, p {
+  margin: 0;
+}
+
+input, select, button, textarea {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: $font-size;
+  font-family: $font-family;
+}
+button {
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -110,7 +98,7 @@ img {
   display: flex;
   gap: 40px;
   &__pic, &__text {
-    flex-basis: 50%;
+    flex-basis: calc(50% - 20px);
   }
 
   &__pic {
@@ -165,7 +153,7 @@ img {
   }
 }
 
-.social-media-list {
+.social-media {
   &__item {
     font-size: 25px;
   }
