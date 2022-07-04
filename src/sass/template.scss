@@ -5,7 +5,7 @@
 }
 
 body {
-  font: 400 $font-size $font-family;
+  font: $font-weight $font-size $font-family;
   color: $black;
   background-color: $white;
   margin: 0;
@@ -27,6 +27,7 @@ h1,h2,h3,h4,h5,h6, p {
 }
 
 input, select, button, textarea {
+  appearance: none;
   box-shadow: none;
   border: none;
   outline: none;
@@ -52,8 +53,8 @@ img {
   max-width: $container-width;
   margin: 0 auto;
 
-  @media (max-width: calc($container-width + 10px)){
-    padding: 0 10px;
+  @media (max-width: calc($container-width + 15px)){
+    padding: 0 15px;
   }
 }
 
