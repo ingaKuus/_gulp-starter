@@ -28,18 +28,18 @@ const scss = () => {
 		}))
 		.pipe(sassGlob())
 		.pipe(sass())
-		//   .pipe(webpCss())
+		// .pipe(webpCss())
 		.pipe(prefixer())
-		.pipe(shorthand())
+		// .pipe(shorthand())
 		.pipe(groupMedia())
 		.pipe(size({ title: "style.css" }))
 		.pipe(dest(path.scss.dest, { sourcemaps: app.isDev }))
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(csso())
-		.pipe(size({ title: "style.min.css" }))
-		.pipe(dest(path.scss.dest, { sourcemaps: app.isDev }))
+		// .pipe(rename({
+		// 	suffix: '.min'
+		// }))
+		// .pipe(csso())
+		// .pipe(size({ title: "style.min.css" }))
+		// .pipe(dest(path.scss.dest, { sourcemaps: app.isDev }))
 }
 
 module.exports = scss;
