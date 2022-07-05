@@ -14,19 +14,19 @@ const gulpif = require('gulp-if');
 
 // Обработка HTML
 const html = () => {
-  return src(path.html.src)
-      .pipe(plumber({
-          errorHandler: notify.onError(error => ({
-              title: "HTML",
-              message: error.message
-          }))
-      }))
-      .pipe(fileInclude())
-      .pipe(webpHtml())
-      // .pipe(size({title: "До сжатия"}))
-      // .pipe(htmlmin(app.htmlmin))
-      // .pipe(size({title: "После сжатия"}))
-      .pipe(dest(path.html.dest))
+	return src(path.html.src)
+		.pipe(plumber({
+			errorHandler: notify.onError(error => ({
+				title: "HTML",
+				message: error.message
+			}))
+		}))
+		.pipe(fileInclude())
+		.pipe(webpHtml())
+		// .pipe(size({title: "До сжатия"}))
+		// .pipe(htmlmin(app.htmlmin))
+		// .pipe(size({title: "После сжатия"}))
+		.pipe(dest(path.html.dest))
 }
 
 module.exports = html;

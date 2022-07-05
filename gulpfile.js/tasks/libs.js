@@ -9,14 +9,14 @@ const notify = require('gulp-notify');
 
 // Обработка Libs
 const libs = () => {
-  return src(path.libs.src)
-      .pipe(plumber({
-          errorHandler: notify.onError(error => ({
-              title: "Libs",
-              message: error.message
-          }))
-      }))
-      .pipe(dest(path.libs.dest))
+	return src(path.libs.src)
+		.pipe(plumber({
+			errorHandler: notify.onError(error => ({
+				title: "Libs",
+				message: error.message
+			}))
+		}))
+		.pipe(dest(path.libs.dest))
 }
 
 module.exports = libs;

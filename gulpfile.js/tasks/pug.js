@@ -13,17 +13,17 @@ const gulpif = require('gulp-if');
 
 // PUG
 const pug = () => {
-  return src(path.pug.src)
-      .pipe(plumber({
-          errorHandler: notify.onError(error => ({
-              title: "Pug",
-              message: error.message
-          }))
-      }))
-      .pipe(pugs(app.pug))
-    //   .pipe(webpHtml())
-    //   .pipe(prettyHtml())
-      .pipe(dest(path.pug.dest))
+	return src(path.pug.src)
+		.pipe(plumber({
+			errorHandler: notify.onError(error => ({
+				title: "Pug",
+				message: error.message
+			}))
+		}))
+		.pipe(pugs(app.pug))
+		// .pipe(webpHtml())
+		// .pipe(prettyHtml())
+		.pipe(dest(path.pug.dest))
 }
 
 module.exports = pug;

@@ -15,11 +15,11 @@ const libs = require('./tasks/libs.js')
 
 // Сервер
 const server = () => {
-    browserSync.init({
-        server: {
-            baseDir: path.root
-        }
-    })
+	browserSync.init({
+		server: {
+			baseDir: path.root
+		}
+	})
 }
 
 // Экспорт задач
@@ -33,22 +33,22 @@ exports.libs = libs;
 
 // Наблюдение
 const watcher = () => {
-    watch(path.pug.watch).on('all',series(pug, browserSync.reload));
-    watch(path.scss.watch).on('all',series(scss, browserSync.reload));
-    watch(path.js.watch).on('all',series(js, browserSync.reload));
-    watch(path.img.watch, img).on('all', browserSync.reload);
-    watch(path.font.watch, font).on('all', browserSync.reload);
-    watch(path.libs.watch, libs).on('all', browserSync.reload);
+	watch(path.pug.watch).on('all',series(pug, browserSync.reload));
+	watch(path.scss.watch).on('all',series(scss, browserSync.reload));
+	watch(path.js.watch).on('all',series(js, browserSync.reload));
+	watch(path.img.watch, img).on('all', browserSync.reload);
+	watch(path.font.watch, font).on('all', browserSync.reload);
+	watch(path.libs.watch, libs).on('all', browserSync.reload);
 }
 
 const build = series(
-    clear,
-    parallel(pug, scss, js, img, font, libs)
+	clear,
+	parallel(pug, scss, js, img, font, libs)
 );
 
 const dev = series(
-    build,
-    parallel(watcher, server)
+	build,
+	parallel(watcher, server)
 );
 
 // Сборка

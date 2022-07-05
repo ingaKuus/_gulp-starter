@@ -1,22 +1,22 @@
 mixin headerNav(navLinks)
-  nav.nav.header__nav
-    
-    //- Бургер
-    input.burger-checkbox(type="checkbox" name="" id="")
-    .burger-lines
-      span.line.line-1
-      span.line.line-2
-      span.line.line-3
+	nav.nav.header__nav
+		
+		//- Бургер
+		input.burger-checkbox(type="checkbox" name="" id="")
+		.burger-lines
+			span.line.line-1
+			span.line.line-2
+			span.line.line-3
 
-    //- Nav-menu
-    +navLinks(navLinks)
+		//- Nav-menu
+		+navLinks(navLinks)
 
 mixin navLinks(links, lvl = 0)
-  ul.header__nav-links.nav__links(class= !lvl ? 'header__nav-links-body' : (lvl === 1 ? 'submenu first-lvl' : 'submenu'))
-    each link in links
-      li
-        a.header__nav-link.nav__link(href=`./${link.href}-page.html` class= link.sublinks ? 'complex' : '')= link.name
-        if (link.sublinks)
-          +navLinks(link.sublinks, ++lvl)
+	ul.header__nav-links.nav__links(class= !lvl ? 'header__nav-links-body' : (lvl === 1 ? 'submenu first-lvl' : 'submenu'))
+		each link in links
+			li
+				a.header__nav-link.nav__link(href=`./${link.href}-page.html` class= link.sublinks ? 'complex' : '')= link.name
+				if (link.sublinks)
+					+navLinks(link.sublinks, ++lvl)
 
 

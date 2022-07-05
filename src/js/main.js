@@ -1,8 +1,8 @@
 
 
 $(function() {
-  const isMobile = $(window).width() <= 767;
+	const isMobile = $(window).width() <= 767;
 
-  
+	
 });
 

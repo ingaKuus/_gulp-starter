@@ -18,25 +18,25 @@ const webpCss = require('gulp-webp-css')
 // Обработка CSS
 const css = () => {
   return src(path.css.src, { sourcemaps: app.isDev })
-      .pipe(plumber({
-          errorHandler: notify.onError(error => ({
-              title: "CSS",
-              message: error.message
-          }))
-      }))
-      .pipe(concat('style.css'))
-      .pipe(webpCss())
-      .pipe(prefixer())
-      .pipe(shorthand())
-      .pipe(groupMedia())
-      .pipe(size({ title: "style.css" }))
-      .pipe(dest(path.css.dest, { sourcemaps: app.isDev }))
-      .pipe(rename({
-          suffix: '.min'
-      }))
-      .pipe(csso())
-      .pipe(size({ title: "style.min.css" }))
-      .pipe(dest(path.css.dest, { sourcemaps: app.isDev }))
+	.pipe(plumber({
+		errorHandler: notify.onError(error => ({
+			title: "CSS",
+			message: error.message
+		}))
+	}))
+	.pipe(concat('style.css'))
+	.pipe(webpCss())
+	.pipe(prefixer())
+	.pipe(shorthand())
+	.pipe(groupMedia())
+	.pipe(size({ title: "style.css" }))
+	.pipe(dest(path.css.dest, { sourcemaps: app.isDev }))
+	.pipe(rename({
+		suffix: '.min'
+	}))
+	.pipe(csso())
+	.pipe(size({ title: "style.min.css" }))
+	.pipe(dest(path.css.dest, { sourcemaps: app.isDev }))
 }
 
 module.exports = css;

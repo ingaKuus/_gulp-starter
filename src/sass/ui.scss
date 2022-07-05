@@ -1,23 +1,23 @@
 
 .btn {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
 }
 
 
 
 
 body * {
-  &::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: salmon;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: #E9E9E9;
-    box-shadow: none;
-  }
+	&::-webkit-scrollbar {
+		width: 3px;
+		height: 3px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: salmon;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: #E9E9E9;
+		box-shadow: none;
+	}
 }
