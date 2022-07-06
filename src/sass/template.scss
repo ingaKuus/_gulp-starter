@@ -34,6 +34,7 @@ input, select, button, textarea {
 	font-family: $font-family;
 }
 button {
+	background-color: transparent;
 	&:hover {
 		cursor: pointer;
 	}
