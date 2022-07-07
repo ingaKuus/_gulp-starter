@@ -32,9 +32,11 @@ input, select, button, textarea {
 	outline: none;
 	font-size: $font-size;
 	font-family: $font-family;
+	font-weight: $font-weight;
 }
 button {
 	background-color: transparent;
+	padding: 0;
 	&:hover {
 		cursor: pointer;
 	}
