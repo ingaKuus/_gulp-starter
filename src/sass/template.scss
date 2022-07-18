@@ -21,7 +21,7 @@ ul {
 	list-style-type: none;
 }
 
-h1,h2,h3,h4,h5,h6, p {
+h1,h2 {
 	margin: 0;
 }
 
@@ -40,24 +40,14 @@ button {
 	&:hover {
 		cursor: pointer;
 	}
+	&:hover, &:focus-visible, &:focus {
+		outline: none;
+	}
 }
 
 
 img {
 	display: block;
-}
-
-._hidden {
-	display: none!important;
-}
-
-._container {
-	max-width: $container-width;
-	margin: 0 auto;
-
-	@media (max-width: calc($container-width + 15px)){
-		padding: 0 15px;
-	}
 }
 
 ._center {
@@ -67,7 +57,7 @@ img {
 	transform: translate(-50%, -50%);
 }
 
-.pic-container {
+.pic-wrapper {
 	position: relative;
 	overflow: hidden;
 
@@ -97,22 +87,6 @@ img {
 	}
 }
 
-.pic-block {
-	display: flex;
-	gap: 40px;
-	&__pic, &__text {
-		flex-basis: calc(50% - 20px);
-	}
-
-	&__pic {
-		min-height: 300px;
-
-		.pic-container {
-			height: 100%;
-			min-height: 300px;
-		}
-	}
-}
 
 .logo-wrapper {
 	display: flex;
@@ -125,42 +99,6 @@ img {
 	}
 }
 
-.icon {
-	display: inline-block;
-	font-size: 30px;
-	line-height: 0;
-	transition: color .2s ease;
-
-	&.left {
-		transform: rotate(180deg);
-	}
-	&.up {
-		transform: rotate(-90deg);
-	}
-	&.down {
-		transform: rotate(90deg);
-	}
-}
-
-.numbers, .social-media {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-	
-	&__item, &__item .icon {
-		transition: color .3s ease;
-	}
-
-	&__item:hover {
-		color: salmon;
-	}
-}
-
-.social-media {
-	&__item {
-		font-size: 25px;
-	}
-}
 
 .header {
 	&, &__nav-row {
