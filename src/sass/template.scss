@@ -110,6 +110,14 @@ img {
 	left: 0;
 	right: 0;
 	top: 0;
+
+	&.sticky {
+		transform: translateY(calc(-100% - 5px));
+		transition: transform .2s ease;
+		&.shown {
+			transform: translateY(0);
+		}
+	}
 }
 .header {
 	.burger {
@@ -144,9 +152,9 @@ img {
 		}
 
 		&-lines, &-checkbox {
-			position: absolute;
+			position: fixed;
 			top: 16px;
-			right: 30px;
+			right: 16px;
 			display: none;
 		}
 
@@ -171,14 +179,13 @@ img {
 				}
 			}
 
-			& ~ .nav__links-body {
+			& ~ .burger-target {
 				transform: translateY(0);
 			}
 		}
 	}
 
 	ul {
-		display: block;
 		gap: 0;
 		margin: 0;
 		li {
@@ -190,69 +197,86 @@ img {
 			}
 		}
 	}
+}
 
-	.nav {
+.nav {
+	position: relative;
+
+	&__links-body {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	&__link {
 		position: relative;
-
-		&__links-body {
-			transition: all .2s ease;
-		}
-		&__links {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			flex-direction: row;
-		}
-
-		&__link {
-			position: relative;
-			a:hover, a:focus-visible {
-				& + .submenu {
-					display: block;
-				}
-			}
-		}
-
-		.submenu {
-			display: none;
-			position: absolute;
-			top: 100%;
-
-			&:hover {
-				display: block;
-			}
+		a {
+			display: inline-block;
 		}
 	}
 
-	@media (max-width: 768px) {
+	.submenu {
+		position: absolute;
+		top: 100%;
+		
+		visibility: hidden;
+		transition: all .2s ease;
+
+		&.opened {
+			visibility: visible;
+		}
+	}
+}
+
+// mobile-first
+@media (min-width: 768px) {
+	.nav {
+		.submenu {
+			opacity: 0;
+			transform: translateY(20px);
+	
+			&.opened {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header {
 		.burger {
 			&-lines, &-checkbox {
 				display: flex;
 			}
+
+			&-target {
+				transform: translateY(-100%);
+				transition: all .2s ease;
+			}
+		}
+	}
+
+	.nav {
+		&__links {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		&__link {
+			width: 100%;
+
+			a {
+				display: block;
+				width: 100%;
+			}
 		}
 
-		.nav {
-			&__links-body {
-				transform: translateY(-100%);
-			}
-
-			&__links {
-				flex-direction: column;
-				align-items: flex-start;
-			}
-			&__link {
-				width: 100%;
-
-				a {
-					display: block;
-					width: 100%;
-				}
-			}
-
-			.submenu {
-				&.opened {
-					position: static;
-				}
+		.submenu {
+			position: static;
+			display: none;
+			&.opened {
+				display: block;
 			}
 		}
 	}
