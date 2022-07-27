@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	pug: {
-		pretty: true,
+		pretty: '\t',
 		data: {
 				// news: require('../data/news.json')
 		}
