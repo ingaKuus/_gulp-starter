@@ -83,7 +83,7 @@ img {
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 576px) {
 		margin-bottom: 70px;
 
 		&__title {
@@ -366,22 +366,5 @@ img {
 		top: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 2;
-	}
-}
-
-
-// mobile-first
-@media (min-width: 767px) {
-	.mobile {
-		display: none;
-	}
-	.desktop {
-		display: block;
-	}
-}
-
-@media (max-width: 767px) {
-	.desktop {
-		display: none;
 	}
 }
