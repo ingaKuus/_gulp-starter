@@ -26,9 +26,37 @@ ul {
 	list-style-type: none;
 }
 
-h1,h2 {
+h1,h2,h3,h4,h5,h6 {
+	font-family: $title;
 	margin: 0;
+	margin-bottom: 30px;
 }
+.nowrap {
+	white-space: nowrap;
+}
+
+h1, .page-title {
+	font-size: 48px;
+	line-height: calc(62.4/48);
+	font-weight: 400;
+}
+h2, .block__title {
+	font-size: 40px;
+	line-height: calc(52/40);
+	font-weight: 500;
+}
+h3 {
+	font-size: 32px;
+	line-height: calc(32/41.6);
+	font-weight: 500;
+}
+h4 {
+	font-size: 24px;
+	line-height: calc(24/31.2);
+	font-weight: 400;
+}
+
+
 
 input, select, button, textarea {
 	appearance: none;
@@ -75,20 +103,8 @@ img {
 .block {
 	margin-bottom: 120px;
 
-	&__title {
-		margin-bottom: 40px;
-
-		span {
-			white-space: nowrap;
-		}
-	}
-
 	@media (max-width: 576px) {
 		margin-bottom: 70px;
-
-		&__title {
-			margin-bottom: 25px;
-		}
 	}
 }
 
