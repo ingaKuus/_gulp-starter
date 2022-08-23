@@ -150,6 +150,8 @@ img {
 	}
 }
 .header {
+	z-index: 90;
+	
 	.burger {
 		&-lines {
 			height: 24px;
