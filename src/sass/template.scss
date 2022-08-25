@@ -339,30 +339,9 @@ img {
 .breadcrumbs {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		> li {
-			&:not(:last-child)::after {
-				content: ' / ';
-			}
-
-			&:last-child {
-				a {
-					color: salmon;
-				}
-			}
-		}
-	}
-	&__link {
-		display: inline-block;
-		font-size: 18px;
-		transition: color .2s ease;
-		white-space: nowrap;
-		&:hover {
-			color: salmon;
-		}
+	
+	.kb_title {
+		cursor: default;
 	}
 }
 
